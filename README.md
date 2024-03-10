@@ -39,7 +39,12 @@ This Python script scrapes information from Google Maps using BeautifulSoup and 
 Here's an example of how to use the script:
 
 ```bash
-python scrape_google_maps.py
+python test1.py
+```
+or 
+
+```bash
+python test1.py
 ```
 
 Enter the location: New York
