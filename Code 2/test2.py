@@ -1,5 +1,4 @@
 from selenium import webdriver
-import pyautogui
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
@@ -7,15 +6,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 
-filename = "data"
-link = "https://www.google.com/maps/search/electrician+in+Chicago,+IL,+USA/@41.8336478,-87.8720473,11z/data=!3m1!4b1"
+def Selenium_extractor(location, search_query):
+    filename = f"data_{location}_{search_query}"
+    link = f"https://www.google.com/maps/search/{search_query}+in+{location}"
 
-browser = webdriver.Chrome()
-record = []
-e = []
-le = 0
+    browser = webdriver.Chrome()
+    record = []
+    e = []
+    le = 0
 
-def Selenium_extractor():
+    browser.get(link)
+    time.sleep(10)
 
     action = ActionChains(browser)
     a = browser.find_elements(By.CLASS_NAME, "hfpxzc")
@@ -70,10 +71,10 @@ def Selenium_extractor():
             print("error")
             continue
 
+    browser.quit()
 
+# Prompt user for location and search query
+location = input("Enter the location: ")
+search_query = input("Enter the search query: ")
 
-
-
-browser.get(str(link))
-time.sleep(10)
-Selenium_extractor()
+Selenium_extractor(location, search_query)
