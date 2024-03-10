@@ -6,9 +6,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 
-def scrape_google_maps(search_query):
+def scrape_google_maps(location, search_query):
     results = []
-    url = f"https://www.google.com/maps/search/{search_query}"
+    url = f"https://www.google.com/maps/search/{location} {search_query}"
     # Prepare chrome browser
     browser = webdriver.Chrome()
     # inject the google url into the browser
@@ -17,7 +17,7 @@ def scrape_google_maps(search_query):
     time.sleep(5)
     # scroll delay
     scroll_pause_time = 2
-    # Bassicaly track how deep we scroll down
+    # Bassically track how deep we scroll down
     last_scroll_height = 0
 
     while True:
@@ -72,9 +72,11 @@ def scrape_google_maps(search_query):
     browser.quit()
     return results
 
+# Prompt user for location and search query
+location = input("Enter the location: ")
+search_query = input("Enter the search query: ")
 
-search_query = "maill in indonesian"
-mall_data = scrape_google_maps(search_query)
+mall_data = scrape_google_maps(location, search_query)
 
 # Save to CSV
 df = pd.DataFrame(mall_data)
