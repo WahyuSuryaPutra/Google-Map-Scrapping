@@ -21,12 +21,18 @@ This Python script scrapes information from Google Maps using BeautifulSoup and 
 1. Run the script:
 
    ```bash
-   python scrape_google_maps.py
+   python test2.py
    ```
 
-2. Provide necessary inputs such as location, search query, etc.
+   or
 
-3. The script will scrape the information from Google Maps and display the results.
+      ```bash
+   python test1_maps.py
+   ```
+
+3. Provide necessary inputs such as location, search query, etc.
+
+4. The script will scrape the information from Google Maps and display the results.
 
 ## Example
 
