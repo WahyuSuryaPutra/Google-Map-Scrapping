@@ -62,6 +62,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-This README provides basic instructions on how to install and use the script, along with links to the dependencies and license information.
-
-Remember to replace placeholders like `your_username`, `google-maps-scraping`, and `scrape_google_maps.py` with appropriate names for your project. Additionally, you might want to add more detailed information depending on the complexity of your project.
